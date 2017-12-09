@@ -1,0 +1,24 @@
+{
+  "name": "proiect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramonabotezatu25/proiect.git"
+  },
+  "author": "Botezatu Ramona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramonabotezatu25/proiect/issues"
+  },
+  "homepage": "https://github.com/ramonabotezatu25/proiect#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "sequelize": "^4.27.0"
+  }
+}
