@@ -1,0 +1,81 @@
+.App {
+    text-align: center;
+
+}
+
+h3.data:hover{
+   background-color: #000;
+   cursor: pointer;
+}
+
+iframe{
+  margin:10px;
+}
+
+.dt{
+  float:left;
+  width: 250px;
+  height: 613px;
+  background-color: #0B173B;
+  color:white;
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.btn{
+  background-color:#A9BCF5;
+  width:150px;
+  height: 50px;
+   padding-top: 20px;
+  padding-left: 0px;
+  padding-bottom: 40px;
+  font-family: sans-serif; 
+  opacity: 0.6;
+  transition:1s;
+}
+.btn:hover{
+  opacity: 1;
+}
+.dsg{
+  margin-left:10px;
+}
+.App-header {
+  background-color: #084B8A;
+  height: 120px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  color: white;
+  text-align: left;
+}
+
+a{
+  font-size: 25px;
+  display:block;
+  margin-bottom: 10px;
+}
+.head{
+  text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+body{
+  background-color: #A9BCF5;
+}
+.linkuri{
+  margin-top: 70px;
+}

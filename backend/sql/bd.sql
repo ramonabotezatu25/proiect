@@ -22,7 +22,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Categorie` (
   `id` INT NOT NULL,
-  `numeCategorie` VARCHAR(45) NULL,
+  `numeCategorie` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -32,8 +32,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Document` (
   `id` INT NOT NULL,
-  `numeDocument` VARCHAR(45) NULL,
-  `numarInregistrare` INT NULL,
+  `numeDocument` VARCHAR(45) NOT NULL,
+  `numarInregistrare` INT NOT NULL,
   `idDoc` INT NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `FK_ID_DOC` FOREIGN KEY (`idDoc`) REFERENCES `Categorie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)

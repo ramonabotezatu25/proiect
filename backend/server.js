@@ -18,7 +18,13 @@ var app = express()
 app.use(express.json())
 app.use(express.urlencoded())
 
-app.use(express.static('public'))
+app.use(express.static('../frontend/'))
+app.use(function(req,res,next){
+    res.header("Access-Control-Allow-Origin","*")
+    res.header('Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept')
+    res.header("Access-Control-Allow-Methods","POST, GET, OPTIONS, PUT, DELETE")
+    next()
+})
 
 var Categorii = sequelize.define('Categorie',{
     numeCategorie: Sequelize.STRING,
@@ -129,5 +135,11 @@ app.delete('/documente/:id',function(request,response){
     })
 })
 
+
+app.get('/categorii/:id/documente', function(req, res) {
+    Documente.findAll({where: {idDoc: req.params.id}}).then(function(categoriiW) {
+        res.status(200).send(categoriiW)
+    })
+})
 
 app.listen(8080)
