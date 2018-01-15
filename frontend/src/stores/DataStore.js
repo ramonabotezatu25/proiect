@@ -9,10 +9,10 @@ class DataStore{
     }
     
     getAll(){
+       
         axios(SERVER+'/documente')
         .then((response)=>{
             for(var i =0;i<response.data.length;i++){
-                debugger;
                 if(response.data[i].idDoc == 1){
                     response.data[i].id="Adeverinta student";
                 }else if(response.data[i].idDoc == 2){
@@ -49,13 +49,27 @@ class DataStore{
     deleteOne(id){
         
     }
-    getDocByCateg(categ){
+     
+     getDocByCateg(categ){
         axios(SERVER + '/categorii/' + categ + '/documente').then((res) =>{
             this.content = res.data
             this.emitter.emit('CATEG_LOAD')
         })
     }
-   
+    getDropBox()
+    {
+        var Dropbox = require('dropbox');
+        var dbx = new Dropbox({ accessToken: 'J8Lh24qAxwAAAAAAAAAA8nGvOfISjn2tDzyRMSXluoY9A8ewUY3778HyUQuX7snK' });
+           dbx.filesListFolder({path: '/documente'})
+                .then(function (response) {
+                    debugger;
+                            this.content=response.entries
+                            this.emitter.emit('DROPBOX_LOAD')}.bind(this))
+                .catch(function(error) {
+                  console.log(error);
+                });
+    }
+
 }
 
 export default DataStore;

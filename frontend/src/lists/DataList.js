@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import {EventEmitter} from 'fbemitter'
 import DataStore from '../stores/DataStore'
+import * as drbox from '../Dropbox/dropbox'; 
 
 const emitter=new EventEmitter()
 const store=new DataStore(emitter)
 
 class DataList extends Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             data:[]
         }
@@ -23,10 +24,10 @@ class DataList extends Component{
       })
       console.log(this.state.data.length)
   }
+
   accesCategorie(value) {
       store.getDocByCateg(value)
        emitter.addListener('CATEG_LOAD',()=>{
-           debugger;
           this.setState({
               data:store.content
           })
@@ -35,6 +36,7 @@ class DataList extends Component{
           '_blank' // <- This is what makes it open in a new window.
         );
         window.location.reload();
+        
      })
      
   }
